@@ -4,6 +4,10 @@ llm = AutoModelForCausalLM.from_pretrained(
     "zoltanctoth/orca_mini_3B-GGUF", model_file="orca-mini-3b.q4_0.gguf"
 )
 
+llm_llama2 = AutoModelForCausalLM.from_pretrained(
+    "TheBloke/Llama-2-7b-Chat-GGUF", model_file="llama-2-7b-chat.Q5_K_M.gguf"
+)
+
 
 def get_prompt(instruction: str, history: list[str] | None = None) -> str:
     system = "You are an AI assistant that gives helpful answers. You answer the question in a short and concise way."
@@ -23,7 +27,7 @@ answer = ""
 for word in llm(prompt, stream=True):
     print(word, end="", flush=True)
     answer += word
-print()
+print("\n\n")
 history.append(answer)
 
 question = "And of the United States?"

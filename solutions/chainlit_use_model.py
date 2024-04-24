@@ -27,22 +27,3 @@ async def on_chat_start():
     )
     await cl.Message("Model initialized. How can I help you?").send()
 
-
-"""
-history = []
-
-question = "WWhich city is the capital of India?"
-prompt = get_prompt(question)
-answer = ""
-for word in llm(prompt, stream=True):
-    print(word, end="", flush=True)
-    answer += word
-print()
-history.append(answer)
-
-question = "And of the United States?"
-prompt = get_prompt(question, history)
-for word in llm(prompt, stream=True):
-    print(word, end="", flush=True)
-print()
-"""

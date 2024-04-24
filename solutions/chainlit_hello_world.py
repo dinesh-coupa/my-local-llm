@@ -21,22 +21,3 @@ async def on_message(message: cl.Message):
     response = f"Hello World! You just sent: {message.content}!"
     await cl.Message(response).send()
 
-
-"""
-history = []
-
-question = "Which city is the capital of India?"
-prompt = get_prompt(question)
-answer = ""
-for word in llm(prompt, stream=True):
-    print(word, end="", flush=True)
-    answer += word
-print()
-history.append(answer)
-
-question = "And of the United States?"
-prompt = get_prompt(question, history)
-for word in llm(prompt, stream=True):
-    print(word, end="", flush=True)
-print()
-"""
