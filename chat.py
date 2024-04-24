@@ -1,3 +1,4 @@
+import chainlit as cl
 from ctransformers import AutoModelForCausalLM
 
 llama_llm = AutoModelForCausalLM.from_pretrained(
@@ -22,9 +23,6 @@ def get_prompt(
         else:
             prompt = f"<s>[INST] <<SYS>>\n{system}\n<</SYS>>\n\n{instruction} [/INST]"
     return prompt
-
-
-import chainlit as cl
 
 
 @cl.on_message
@@ -80,19 +78,3 @@ def on_chat_start():
         "TheBloke/Llama-2-7B-Chat-GGUF", model_file="llama-2-7b-chat.Q3_K_M.gguf"
     )
 
-
-# question = "Which city is the capital of India? "
-# answer = ""
-
-# for word in llm(get_prompt(question), stream=True):
-#     print(word, end="", flush=True)
-#     answer += word
-# print()
-
-# history = []
-# history.append(answer)
-# question = "And of the United States?"
-
-# for word in llm(get_prompt(question, history), stream=True):
-#     print(word, end="", flush=True)
-# print()
