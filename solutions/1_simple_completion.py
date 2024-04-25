@@ -4,8 +4,9 @@ llm = AutoModelForCausalLM.from_pretrained(
     "zoltanctoth/orca_mini_3B-GGUF", model_file="orca-mini-3b.q4_0.gguf"
 )
 
-prompt = "Saveetha Engineering College is located at "
+prompt = "Hi! Good Morning! "
 
-for word in llm(prompt, stream=True):
-    print(word, end="", flush=True)
-print()
+print(llm(prompt))
+
+
+# prompt_2 = "Hi! The capital city of Tamil Nadu is called as "

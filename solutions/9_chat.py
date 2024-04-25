@@ -1,9 +1,10 @@
 import chainlit as cl
 from ctransformers import AutoModelForCausalLM
 
-llama_llm = AutoModelForCausalLM.from_pretrained(
-    "TheBloke/Llama-2-7B-Chat-GGUF", model_file="llama-2-7b-chat.Q3_K_M.gguf"
-)
+
+# LLM based chat interface
+# Hit "use orca" or "use llama2" to switch between LLM Models
+# Hit "forget memory" to erase History Context
 
 
 def get_prompt(
@@ -77,4 +78,3 @@ def on_chat_start():
     llama_llm = AutoModelForCausalLM.from_pretrained(
         "TheBloke/Llama-2-7B-Chat-GGUF", model_file="llama-2-7b-chat.Q3_K_M.gguf"
     )
-

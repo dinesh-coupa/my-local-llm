@@ -21,7 +21,7 @@ def get_prompt(instruction: str, history: list[str] | None = None) -> str:
 
 history = []
 
-question = "Which city is the capital of India?"
+question = "Which city is the capital of Tamil Nadu?"
 prompt = get_prompt(question)
 answer = ""
 for word in llm(prompt, stream=True):
@@ -30,7 +30,7 @@ for word in llm(prompt, stream=True):
 print("\n\n")
 history.append(answer)
 
-question = "And of the United States?"
+question = "And of Kerala?"
 prompt = get_prompt(question, history)
 for word in llm(prompt, stream=True):
     print(word, end="", flush=True)
