@@ -1,4 +1,4 @@
-# The Local LLM Crash Course - Build Your Own GPT in 2 hours!
+# Build your own local ChatGPT - in 1 hour!
 
 # Course Resources
 
@@ -7,6 +7,7 @@ https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-
 
 ### Hugging Face
 * The Orca Model's Model Card: https://huggingface.co/zoltanctoth/orca_mini_3B-GGUF
+* The Llama2's Model Card: https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
 
 ###  Installing `ctransformers` and Chainlit
 Just for reference. Remember, you don't need to do this as it's pre-installed in your Codepace.
