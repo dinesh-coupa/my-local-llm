@@ -9,4 +9,5 @@ prompt = "Hi! Good Morning! "
 print(llm(prompt))
 
 
+# pip install ctransformers chainlit
 # prompt_2 = "Hi! The capital city of Tamil Nadu is called as "
