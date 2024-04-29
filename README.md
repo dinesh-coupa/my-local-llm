@@ -1,6 +1,19 @@
 # Build your own local ChatGPT - in 1 hour!
 
-# Course Resources
+## Get Started here - 
+1. Installing `ctransformers` and Chainlit in case it's not available from the Codespace
+```
+pip install ctransformers chainlit
+```
+2. Command to run chainlit python files (Files 5 thru 9 from solutions/ folder)
+```
+chainlit run <file_name.py>
+```
+This will open the corresponding chainlit in a new browser tab
+
+
+
+## Course Resources
 
 ### Codespaces Pricing and Free Credits
 https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces
@@ -9,11 +22,6 @@ https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-
 * The Orca Model's Model Card: https://huggingface.co/zoltanctoth/orca_mini_3B-GGUF
 * The Llama2's Model Card: https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
 
-###  Installing `ctransformers` and Chainlit
-Just for reference. Remember, you don't need to do this as it's pre-installed in your Codepace.
-```
-pip install ctransformers chainlit
-```
 
 ## The Open Orca Dataset
 The dataset on Hugging Face: https://huggingface.co/datasets/Open-Orca/OpenOrca
