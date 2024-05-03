@@ -11,8 +11,8 @@ import sys
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
 
-# loader = TextLoader("solutions/files/stalin_fide.txt")
-loader = TextLoader("solutions/files/sf_arctic.txt")
+loader = TextLoader("solutions/files/stalin_fide.txt")
+# loader = TextLoader("solutions/files/sf_arctic.txt")
 documents = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=250)
@@ -30,9 +30,9 @@ llm = CTransformers(
 chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
 prompt = "Who is Stalin? what is Stalin talking about ?"
-prompt_2 = "Tell me about Arctic"
-print(llm(prompt_2))
-print(chain.invoke(prompt_2))
+# prompt_2 = "Tell me about Arctic"
+# print(llm(prompt))
+print(chain.invoke(prompt))
 
 # zoltanctoth/orca_mini_3B-GGUF
 # model_file="orca-mini-3b.q4_0.gguf"
