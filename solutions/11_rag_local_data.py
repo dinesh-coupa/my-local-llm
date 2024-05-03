@@ -1,5 +1,5 @@
 from langchain_community.llms import CTransformers
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain.vectorstores.chroma import Chroma
@@ -10,9 +10,6 @@ import sys
 
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
-prompt = "Hi! Good Morning! "
-
-# print(llm(prompt))
 
 loader = TextLoader("solutions/files/stalin_fide.txt")
 documents = loader.load()
@@ -31,7 +28,9 @@ llm = CTransformers(
 )
 chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
-print(chain.run("what is Stalin talking about ?"))
+prompt = "Who is Stalin? what is Stalin talking about ?"
+print(llm(prompt))
+print(chain.invoke("Who is Stalin? what is Stalin talking about ?"))
 
 # zoltanctoth/orca_mini_3B-GGUF
 # model_file="orca-mini-3b.q4_0.gguf"
