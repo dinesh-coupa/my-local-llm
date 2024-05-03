@@ -11,7 +11,8 @@ import sys
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
 
-loader = TextLoader("solutions/files/stalin_fide.txt")
+# loader = TextLoader("solutions/files/stalin_fide.txt")
+loader = TextLoader("solutions/files/inspire_2024.txt")
 documents = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=250)
@@ -21,7 +22,7 @@ texts = text_splitter.split_documents(documents)
 # print(texts[1])
 
 embeddings = HuggingFaceEmbeddings()
-store = Chroma.from_documents(texts, embeddings, collection_name="stalin-fide")
+store = Chroma.from_documents(texts, embeddings, collection_name="coupa-inspire")
 
 llm = CTransformers(
     model="zoltanctoth/orca_mini_3B-GGUF", model_file="orca-mini-3b.q4_0.gguf"
@@ -29,8 +30,9 @@ llm = CTransformers(
 chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
 prompt = "Who is Stalin? what is Stalin talking about ?"
-print(llm(prompt))
-print(chain.invoke("Who is Stalin? what is Stalin talking about ?"))
+prompt_2 = "Who are some Key speakers at Coupa Inspire 2024?"
+print(llm(prompt_2))
+print(chain.invoke(prompt_2))
 
 # zoltanctoth/orca_mini_3B-GGUF
 # model_file="orca-mini-3b.q4_0.gguf"
