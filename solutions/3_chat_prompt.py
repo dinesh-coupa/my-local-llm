@@ -19,8 +19,8 @@ for word in llm(prompt, stream=True):
 print("\n\n")
 
 
-# question_2 = "and of Kerala?"
-# prompt = get_prompt(question_2)
-# for word in llm(prompt, stream=True):
-#     print(word, end="", flush=True)
-# print("\n\n")
+question_2 = "and of Kerala?"
+prompt = get_prompt(question_2)
+for word in llm(prompt, stream=True):
+    print(word, end="", flush=True)
+print("\n\n")
